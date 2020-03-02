@@ -1,0 +1,119 @@
+{% load static %}
+<html>
+<head>
+    <title>Vision Assistant</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        window.onload=initAll;
+
+        var sendbutton;
+        function initAll(){
+            sendbutton = document.getElementById("send");
+            sendbutton.onclick = sendmsg;
+        }
+
+        function sendmsg(){
+            var t;
+            var name = document.getElementById("msg").value;
+            var url = '/send?name='+name;
+            
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                t=req.responseText;
+            }
+            };
+            req.open("GET", url, true);
+            req.send();
+            return t;
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="msg-header">
+            <div class="msg-header-img">
+                <img src="{% static 'img/photo.jpg' %}">
+            </div>
+            <div class="active">
+                <h4>Vision Bot</h4>
+                <h6>Active Now</h6>
+            </div>
+            <div class="header-icons">
+                <i class="fa fa-phone"></i>
+                <i class="fa fa-video-camera"></i>
+                <i class="fa fa-info-circle"></i>
+            </div>
+            
+        </div>
+        
+        <div class="chat-page">
+            {% if  %}
+            <div class="msg-inbox">
+                <div class="chats">
+                    <div class="msg-page">
+                        
+
+                        <div class="received-chats">
+                            <div class="received-chats-img">
+                                <img src="{% static 'img/photo.jpg' %}">
+                            </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p><script>document.write(sendmsg())</script></p>
+                                        <span class="time">11:01 PM| October 11</span>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="outgoing-chats">
+                            
+                                
+                                <div class="outgoing-chats-msg">
+                                    <p>User</p>
+                                    <span class="time">11:01 PM| October 11</span>
+                                </div>
+                                
+                                <div class="outgoing-chats-img">
+                                    <img src="{% static 'img/sign.jpg' %}">
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="msg-bottom">
+                <div class="bottom-icons">
+                    <i class="fa fa-plus-circle"></i>
+                    <i class="fa fa-camera"></i>
+                    <i class="fa fa-microphone"></i>
+                    <i class="fa fa-smile-o"></i>        
+                </div>
+                <div class="input-group">
+                    <input type="text" name="name" class="form-control" placeholder="Type a message" id="msg">
+                    <button class="btn form-control btn success" id="send"><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

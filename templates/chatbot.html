@@ -1,0 +1,75 @@
+{% load static %}
+<html>
+<head>
+    <title>Vision Assistant</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="msg-header">
+            <div class="msg-header-img">
+                <img src="{% static 'img/photo.jpg' %}">
+            </div>
+            <div class="active">
+                <h4>Vision Bot</h4>
+                <h6>Active Now</h6>
+            </div>
+            <div class="header-icons">
+                <i class="fa fa-phone"></i>
+                <i class="fa fa-video-camera"></i>
+                <i class="fa fa-info-circle"></i>
+            </div>
+            
+        </div>
+        <div class="chat-page">
+            <div class="msg-inbox">
+                <div class="chats">
+                    <div class="msg-page">
+                        <div class="received-chats">
+                            <div class="received-chats-img">
+                                <img src="{% static 'img/photo.jpg' %}">
+                            </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>Hi! I am Vision Bot.</p>
+                                        <span class="time">11:01 PM| October 11</span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="outgoing-chats">
+                            
+                                
+                                <div class="outgoing-chats-msg">
+                                    <p>User</p>
+                                    <span class="time">11:01 PM| October 11</span>
+                                </div>
+                                
+                                <div class="outgoing-chats-img">
+                                    <img src="{% static 'img/sign.jpg' %}">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="msg-bottom">
+                <div class="bottom-icons">
+                    <i class="fa fa-plus-circle"></i>
+                    <i class="fa fa-camera"></i>
+                    <i class="fa fa-microphone"></i>
+                    <i class="fa fa-smile-o"></i>        
+                </div>
+                <div class="input-group">
+                    <form action="chat1">
+                        <input type="text" class="form-control" placeholder="Type a message" name="usinp">
+                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
